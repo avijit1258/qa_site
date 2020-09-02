@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Question;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -12,12 +13,11 @@ class QuestionController extends Controller
             'body' => 'required|min:5|regex:[?]$',
         ]);
 
-        
+        $question = new Question;
+        $question->body = $request->body;
+        $question->save();
 
-        // $request->user()->tasks()->create([
-        //     'name' => $request->name,
-        // ]);
-
-        // return redirect('/tasks');
+        return redirect('/');
     }
+    
 }
