@@ -14,7 +14,7 @@ class QuestionController extends Controller
         $this->validate($request, [
             'body' => 'required|min:5|regex:/[?]$/',
         ]);
-        
+
         $question = new Question;
         $question->body = $request->body;
         $question->save();
@@ -27,6 +27,8 @@ class QuestionController extends Controller
         $questions = Question::orderBy('created_at', 'asc')->get();
         
         $answer_count = array();
+
+        $random_questions = array('What would you eat if you were stranded on a desert island?', 'Dont plants feel pain?', 'Where do you get your protein?', 'Lots of animals kill for food: why shouldn’t we?', ' Why not do something for people instead of animals?');
 
         for($i = 0; $i < count($questions); $i++)
         {
@@ -42,7 +44,8 @@ class QuestionController extends Controller
 
         return view('questions.index', [
             'questions' => $questions,
-            'answer_count' => $answer_count
+            'answer_count' => $answer_count,
+            'random_question' => $random_questions[rand(0,4)]
         ]);
 
     }

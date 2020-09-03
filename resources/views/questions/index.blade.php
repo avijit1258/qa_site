@@ -21,7 +21,7 @@
                     <!-- <label for="question-body" class="col-sm-3 control-label">Ask your question</label> -->
 
                     <div class="col-sm-6">
-                        <input type="text" name="body" id="question-body" class="form-control" value = "{{old('body')}}" placeholder="What would you eat if you were stranded on a desert island?">
+                        <input type="text" name="body" id="question-body" class="form-control" value = "{{old('body')}}" placeholder="{{$random_question}}">
                     </div>
                 </div>
 
