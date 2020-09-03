@@ -11,7 +11,6 @@ class AnswerController extends Controller
     {
         $this->validate($request, [
             'body' => 'required|min:5',
-            'question_id' => 'required'
         ]);
 
         $answer = new Answer;
