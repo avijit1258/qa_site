@@ -5,7 +5,7 @@
     <!-- Bootstrap Boilerplate... -->
     <div class="panel panel-default">
             <div class="panel-heading">
-                Ask your question
+                <h3> Ask your question </h3>
             </div>
 
         <div class="panel-body">
@@ -13,27 +13,29 @@
             @include('common.errors')
 
             <!-- New Question Form -->
-            <form action="/question" method="POST" class="form-horizontal">
-                {{ csrf_field() }}
+            <div class="container"> 
+                <form action="/question" method="POST" class="form-horizontal">
+                    {{ csrf_field() }}
+                    
+                    <!-- Question Name -->
+                    <div class="form-group">
+                        <!-- <label for="question-body" class="col-sm-3 control-label"> Your question</label> -->
 
-                <!-- Question Name -->
-                <div class="form-group">
-                    <!-- <label for="question-body" class="col-sm-3 control-label">Ask your question</label> -->
-
-                    <div class="col-sm-6">
-                        <input type="text" name="body" id="question-body" class="form-control" value = "{{old('body')}}" placeholder="{{$random_question}}">
+                        <div class="col-sm-offset-2 col-sm-6 ">
+                            <input type="text" name="body" id="question-body" class="form-control" value = "{{old('body')}}" placeholder="{{$random_question}}">
+                        </div>
                     </div>
-                </div>
 
-                <!-- Add Question Button -->
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-6">
-                        <button type="submit" class="btn btn-default">
-                            <i class="fa fa-plus"></i> Add Question
-                        </button>
+                    <!-- Add Question Button -->
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-6">
+                            <button type="submit" class="btn btn-default">
+                                <i class="fa fa-plus"></i> Add Question
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -41,7 +43,7 @@
     @if (count($questions) > 0)
         <div class="panel panel-default">
             <div class="panel-heading">
-                Can you answer any of this questions?
+                <h3> Can you answer any of this questions? </h3>
             </div>
 
             <div class="panel-body">

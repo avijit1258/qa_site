@@ -4,7 +4,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-           <h4> {{$question[0]->body}} </h4>
+           <h3> {{$question[0]->body}} </h3>
         </div>
 
         <div class="panel-body">
@@ -41,7 +41,7 @@
 
                     <!-- Add Answer Button -->
                     <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-6">
+                        <div class="col-sm-offset-5 col-sm-6">
                             <button type="submit" class="btn btn-default">
                                 <i class="fa fa-plus"></i> Add Answer
                             </button>
