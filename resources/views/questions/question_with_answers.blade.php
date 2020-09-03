@@ -8,6 +8,7 @@
         </div>
 
         <div class="panel-body">
+            @include('common.errors')
             <table class="table table-striped question-table">
 
                 <!-- Table Body -->
@@ -34,7 +35,7 @@
                         <label for="answer-body" class="col-sm-3 control-label">Answer this quesiton</label>
 
                         <div class="col-sm-6">
-                            <input type="text" name="body" id="answer-body" class="form-control">
+                            <input type="text" name="body" id="answer-body" class="form-control" value = "{{old('body')}}">
                         </div>
                     </div>
 

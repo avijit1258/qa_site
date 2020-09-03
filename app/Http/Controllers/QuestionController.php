@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Question;
 use App\Answer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class QuestionController extends Controller
 {
@@ -13,7 +14,7 @@ class QuestionController extends Controller
         $this->validate($request, [
             'body' => 'required|min:5|regex:/[?]$/',
         ]);
-
+        
         $question = new Question;
         $question->body = $request->body;
         $question->save();
