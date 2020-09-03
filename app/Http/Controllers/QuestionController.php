@@ -11,7 +11,7 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'body' => 'required|min:5|regex:[?]$',
+            'body' => 'required|min:5|regex:/[?]$/',
         ]);
 
         $question = new Question;
@@ -23,7 +23,7 @@ class QuestionController extends Controller
 
     public function allQuestionsWithTheirAnswerCount()
     {
-        $questions = Question::order_by('created_at', 'asc')->get();
+        $questions = Question::orderBy('created_at', 'asc')->get();
         
         $answer_count = array();
 
@@ -32,7 +32,7 @@ class QuestionController extends Controller
             $answer_count[$questions[$i]->id] = $questions[$i]->answers()->count();
         }
 
-        return view('home', [
+        return view('questions.index', [
             'questions' => $questions,
             'answer_count' => $answer_count
         ]);
