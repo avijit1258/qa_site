@@ -39,4 +39,17 @@ class QuestionController extends Controller
 
     }
 
+    public function questionWithAnswers($question_id)
+    {
+        $question = Question::where('id', $question_id)->get();
+
+        $answers = Answer::where('question_id', $question_id)->order_by('created_at', 'desc')->all();
+
+        return view('home', [
+            'question' => $question,
+            'answers' => $answers
+        ]);
+        
+    }
+
 }
