@@ -36,9 +36,11 @@
                     <a class="navbar-brand" href="#">A prudent question is one-half of wisdom</a>
                 </div>
             </nav>
-        </div>
+        
 
         @yield('content')
+
+        </div>
     </body>
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

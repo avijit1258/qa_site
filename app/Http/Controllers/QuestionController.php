@@ -29,7 +29,14 @@ class QuestionController extends Controller
 
         for($i = 0; $i < count($questions); $i++)
         {
-            $answer_count[$questions[$i]->id] = $questions[$i]->answers()->count();
+            if($questions[$i]->answers()->count())
+            {
+                $answer_count[$questions[$i]->id] = $questions[$i]->answers()->count();
+            }else
+            {
+                $answer_count[$questions[$i]->id] = 0;
+            }
+            
         }
 
         return view('questions.index', [
