@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AnswerController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request, $question_id)
     {
         $this->validate($request, [
             'body' => 'required|min:5',
@@ -16,7 +16,7 @@ class AnswerController extends Controller
 
         $answer = new Answer;
         $answer->body = $request->body;
-        $answer->question_id = $request->question_id;
+        $answer->question_id = $question_id;
         $answer->save();
 
         return redirect('/');
