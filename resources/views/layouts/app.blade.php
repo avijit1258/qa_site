@@ -33,7 +33,7 @@
         <div class="container">
             <nav class="navbar navbar-default">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">A prudent question is one-half of wisdom</a>
+                    <a class="navbar-brand" href="/">A prudent question is one-half of wisdom</a>
                 </div>
             </nav>
         
