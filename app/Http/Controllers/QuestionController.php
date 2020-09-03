@@ -24,7 +24,7 @@ class QuestionController extends Controller
 
     public function allQuestionsWithTheirAnswerCount()
     {
-        $questions = Question::orderBy('created_at', 'asc')->get();
+        $questions = Question::orderBy('created_at', 'desc')->get();
         
         $answer_count = array();
 
@@ -54,7 +54,7 @@ class QuestionController extends Controller
     {
         $question = Question::where('id', $question_id)->get();
 
-        $answers = Answer::where('question_id', $question_id)->orderBy('created_at', 'desc')->get();
+        $answers = Answer::where('question_id', $question_id)->orderBy('created_at', 'asc')->get();
 
         return view('questions.question_with_answers', [
             'question' => $question,
