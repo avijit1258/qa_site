@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="panel panel-default">
+    <div class="panel panel-success">
         <div class="panel-heading">
            <h3> {{$question[0]->body}} </h3>
         </div>

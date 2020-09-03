@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Bootstrap Boilerplate... -->
-    <div class="panel panel-default">
+    <div class="panel panel-success">
             <div class="panel-heading">
                 <h3> Ask your question </h3>
             </div>
@@ -41,7 +41,7 @@
 
     <!-- Current Questions with their answer counts -->
     @if (count($questions) > 0)
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h3> Can you answer any of this questions? </h3>
             </div>
