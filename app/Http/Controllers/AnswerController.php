@@ -18,6 +18,6 @@ class AnswerController extends Controller
         $answer->question_id = $question_id;
         $answer->save();
 
-        return redirect('/');
+        return redirect()->back();
     }
 }
